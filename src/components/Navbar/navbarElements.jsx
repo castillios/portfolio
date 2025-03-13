@@ -5,12 +5,15 @@ import styled from "styled-components";
 export const Nav = styled.nav`
     background: #4A4E69;
     height: 85px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    padding: 0.2rem calc((100vw - 1000px) / 2);
-    z-index: 12;
-    /* Third Nav */
-    /* justify-content: flex-start; */
+    position: fixed;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    z-index: 100;
+    top: 0;
+    left: 0;
 `;
 
 export const NavLink = styled(Link)`
@@ -21,6 +24,7 @@ export const NavLink = styled(Link)`
     padding: 0 1rem;
     height: 100%;
     cursor: pointer;
+
     &.active {
         color: #C9ADA7;
     }
@@ -32,12 +36,13 @@ export const NavLink = styled(Link)`
 export const Bars = styled(FaBars)`
     display: none;
     color: #F2E9E4;
+
     @media screen and (max-width: 768px) {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
-        transform: translate(-100%, 75%);
+        transform: translate(-50%, 75%);
         font-size: 1.8rem;
         cursor: pointer;
     }
@@ -47,13 +52,25 @@ export const NavMenu = styled.div`
     display: flex;
     align-items: center;
     margin-right: -24px;
-    /* Second Nav */
-    /* margin-right: 24px; */
-    /* Third Nav */
-    /* width: 100vw;
-  white-space: nowrap; */
+    position: fixed;
+
     @media screen and (max-width: 768px) {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; // takes up full height of the screen
+        background: #4A4E69;
+        flex-direction: column; // vertical stack
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-100%);
+    
+    &.open {
+        transform: translateY(0); // animated dropdown
     }
 `;
 
@@ -61,9 +78,6 @@ export const NavBtn = styled.nav`
     display: flex;
     align-items: center;
     margin-right: 24px;
-    /* Third Nav */
-    /* justify-content: flex-end;
-  width: 100vw; */
     @media screen and (max-width: 768px) {
         display: none;
     }
@@ -79,7 +93,6 @@ export const NavBtnLink = styled(Link)`
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     text-decoration: none;
-    /* Second Nav */
     margin-left: 24px;
     &:hover {
         transition: all 0.2s ease-in-out;

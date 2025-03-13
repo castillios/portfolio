@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Nav,
   NavLink,
@@ -6,33 +6,32 @@ import {
   NavMenu,
   NavBtn,
   NavBtnLink,
-} from "./navbarElements";
-import './style.css';
+} from "./navbarElements";;
 
 const Navbar = () => {
-  return (
-      <>
-          <Nav>
-              <Bars />
+    const [isOpen, setIsOpen] = useState(false);
 
-              <NavMenu>
-                  <NavLink to="/" >
-                      home
-                  </NavLink>
-                  <NavLink to="/about" activeStyle>
-                      about
-                  </NavLink>
-                  <NavLink to="/projects" activeStyle>
-                      projects
-                  </NavLink>
-                  <NavLink to="/contact" activeStyle>
-                      contact
-                  </NavLink>
-                  {/* Second Nav */}
-                  {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
-              </NavMenu>
+    return (
+        <>
+            <Nav>
+                <Bars onClick={() => setIsOpen(!isOpen)}/>
+
+                <NavMenu className={isOpen ? "open" : ""}>
+                    <NavLink to="/" >
+                        home
+                    </NavLink>
+                    <NavLink to="/about" activeStyle>
+                        about
+                    </NavLink>
+                    <NavLink to="/projects" activeStyle>
+                        projects
+                    </NavLink>
+                    <NavLink to="/contact" activeStyle>
+                        contact
+                    </NavLink>
+                </NavMenu>
           </Nav>
-      </>
+        </>
   );
 };
 
