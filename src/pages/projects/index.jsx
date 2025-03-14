@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../styles/global.css';
 import './projects.css';
-import superMundane from "src/assets/MaleahSmith-Super-Mundane.jpg";
-import exposure from "src/assets/MaleahSmith_ExposureTriangle-01.jpg";
-import internPosters from "src/assets/Historian Wintern Posters.png";
-import howlSticker from "src/assets/howl sticker.png";
+import superMundane from "../../assets/MaleahSmith-Super-Mundane.jpg";
+import exposure from "../../assets/MaleahSmith_ExposureTriangle-01.jpg";
+import internPosters from "../../assets/Historian Wintern Posters.png";
+import howlSticker from "../../assets/howl sticker.png";
 
 
 const Projects = () => {
