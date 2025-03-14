@@ -1,0 +1,14 @@
+p {
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    text-align: left;
+    justify-self: start;
+}
+
+.container {
+    display: grid;
+
+    /* background-color: lightblue; */
+
+}

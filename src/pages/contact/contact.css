@@ -1,0 +1,10 @@
+.container {
+    display: grid;
+}
+
+a {
+    padding-left: 96px;
+    position: center;
+    align-items: center;
+    color: #ffffffde;
+}

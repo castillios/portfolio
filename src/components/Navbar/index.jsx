@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {FaBars, FaTimes} from "react-icons/fa";
 import {
   Nav,
   NavLink,
@@ -14,21 +15,15 @@ const Navbar = () => {
     return (
         <>
             <Nav>
-                <Bars onClick={() => setIsOpen(!isOpen)}/>
+                <Bars onClick={() => setIsOpen(!isOpen)}>
+                    {isOpen ? <FaTimes /> : <FaBars />}
+                </Bars>
 
                 <NavMenu className={isOpen ? "open" : ""}>
-                    <NavLink to="/" >
-                        home
-                    </NavLink>
-                    <NavLink to="/about" activeStyle>
-                        about
-                    </NavLink>
-                    <NavLink to="/projects" activeStyle>
-                        projects
-                    </NavLink>
-                    <NavLink to="/contact" activeStyle>
-                        contact
-                    </NavLink>
+                    <NavLink to="/" onClick={() => setIsOpen(false)}>home</NavLink>
+                    <NavLink to="/about" onClick={() => setIsOpen(false)}>about</NavLink>
+                    <NavLink to="/projects" onClick={() => setIsOpen(false)}>projects</NavLink>
+                    <NavLink to="/contact" onClick={() => setIsOpen(false)}>contact</NavLink>
                 </NavMenu>
           </Nav>
         </>

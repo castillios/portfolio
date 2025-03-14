@@ -1,0 +1,13 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto; /* Let the rows adjust to content height */
+    align-items: start; /* Align items to the top of the grid */
+}
+  
+
+h1 {
+    position:relative;
+    padding-left: 50px;
+    /* padding: 10px; */
+}

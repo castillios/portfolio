@@ -11,7 +11,7 @@ export const Nav = styled.nav`
     align-items: center;
     justify-content: flex-start;
     padding: 0 20px;
-    z-index: 100;
+    z-index: 12;
     top: 0;
     left: 0;
 `;
@@ -33,7 +33,7 @@ export const NavLink = styled(Link)`
     }
 `;
 
-export const Bars = styled(FaBars)`
+export const Bars = styled.div`
     display: none;
     color: #F2E9E4;
 
@@ -45,6 +45,7 @@ export const Bars = styled(FaBars)`
         transform: translate(-50%, 75%);
         font-size: 1.8rem;
         cursor: pointer;
+        z-index: 13;
     }
 `;
 
@@ -55,7 +56,6 @@ export const NavMenu = styled.div`
     position: fixed;
 
     @media screen and (max-width: 768px) {
-        display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -65,12 +65,13 @@ export const NavMenu = styled.div`
         flex-direction: column; // vertical stack
         justify-content: center;
         align-items: center;
-        z-index: 100;
-        transition: transform 0.3s ease-in-out;
+        z-index: 12;
         transform: translateY(-100%);
     
     &.open {
+        transition: transform 0.3s ease-in-out;
         transform: translateY(0); // animated dropdown
+        display: flex;
     }
 `;
 
