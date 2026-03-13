@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-size: 16px;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -16,6 +19,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1.5rem 0;
+
+    position: sticky;
+    top: 0;
+
+    background-color: white;
 }
 
 .icon {
@@ -35,15 +44,22 @@ nav a {
     text-decoration: none;
 }
 
+/* .content {
+    padding: 0px calc(1rem + 10vw);
+} */
+
+section {
+    padding-left: calc(1rem + 10vw);
+    padding-right: calc(1rem + 10vw);
+}
+
 .hero {
     display: flex;
     text-align: left;
     align-items: center;
 
     height: 50vh;
-    background-color: bisque;
-
-    padding: 0px calc(1rem + 10vw);
+    /* background-color: bisque; */
 
 }
 
@@ -51,4 +67,123 @@ nav a {
 .hero-title {
     font-size: calc(1rem + 1.5vw);
     font-weight: normal;
+}
+
+#works {
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+    padding-top: 1rem;
+}
+
+.subcat-heading {
+    font-size: calc(1rem + 1vw);
+    font-weight: normal;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .hero-title, .subcat-heading {
+        padding: 2rem calc(.5rem + 1vw);
+    }
+}
+
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* adjust the 3 to however many columns you want */
+    gap: 1rem;
+    /* background-color: bisque; */
+}
+
+.works-grid a.wide {
+    grid-column: span 2;
+}
+
+.works-grid a.tall {
+    grid-row: span 2;
+}
+
+.works-card {
+    position: relative;
+    overflow: hidden; /* hides overlay when it's transparent/translated */
+    border-radius: 12px;
+    transition: transform .3s ease-out;
+}
+
+.works-card:hover {
+    transform: scale(1.02);
+}
+
+.works-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* prevent stretching */
+    display:block;
+}
+
+.works-overlay {
+    position: absolute;
+    inset: 0; /* shorthand for top/right/bottom/left: 0 -> essentially fills the card */
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0;
+    transform: opacity 2s ease;
+}
+
+.works-overlay h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+}
+
+.works-overlay p {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.85;
+}
+
+.works-card:hover .works-overlay {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .works-grid {
+        grid-template-columns: 1fr; /* stacks to a single column */
+        gap: 0.75rem;
+    }
+
+    .works-card {
+        height: 60vw;
+    }
+
+    /* overlay always visible on mobile! */
+    .works-overlay {
+        opacity: 1; 
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.7) 0%,     /* darker at bottom where text is */
+            rgba(0, 0, 0, 0) 60%        /* fades to transparent at top */
+        );
+    }
+    /* reset all spans on mobile so everything stacks */
+    .works-grid a.wide,
+    .works-grid a.tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+
+
+
+
+
+footer {
+    height: 40vh;
 }
