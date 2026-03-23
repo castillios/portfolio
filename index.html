@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>maleah smith</title>
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/reset.css">
 </head>
@@ -19,8 +23,8 @@
         <div class="right-header">
             <nav>
                 <a href="#works">work</a>
-                <a href="#about">about</a>
-                <a id="contact-button" href="#">contact</a>
+                <a href="#" data-panel="about-panel">about</a>
+                <a href="#" data-panel="contact-panel">contact</a>
             </nav>
         </div>
         <!-- nav bar -->
@@ -29,6 +33,10 @@
         <section class="hero">
             <!-- hero -->
              <h1 class="hero-title">hi! i'm maleah,<br>a full stack software engineer<br>with a passion for [design]</h1>
+        </section>
+        <section id="stack">
+            <h2 class="subcat-heading">tech stack</h2>
+
         </section>
         <section id="works">
             <!-- works -->
@@ -52,25 +60,23 @@
                         </div>
                     </div>
                 </a>
-                <!-- <a href="works/studyspotter.html" class="tall">
-                    <img class="works-img" src="assets/studyspot-homepg.png" alt="Screenshot of StudySpotter webapp homepage">
-                </a>                 -->
             </div>
         
 
         </section>
         <section id="about">
             <!-- about me (hidden) -->
-             <div class="about-panel">
+             <div class="panel" id="about-panel">
                 <h3>hello!</h3>
                 <p>this is all about me womp</p>
-
              </div>
-
-             
         </section>
-        <section>
+        <section id="contact">
             <!-- contact (hidden) -->
+             <div class="panel" id="contact-panel">
+                <h3>hello!</h3>
+                <p>contact me here!</p>
+             </div>
         </section>
 
     </main>

@@ -18,9 +18,9 @@
         </div>
         <div class="right-header">
             <nav>
-                <a href="#">work</a>
-                <a href="#">about</a>
-                <a href="#">contact</a>
+                <!-- <a href="#works">work</a> -->
+                <a href="#" data-panel="about-panel">about</a>
+                <a href="#" data-panel="contact-panel">contact</a>
             </nav>
         </div>
         <!-- nav bar -->
@@ -35,11 +35,19 @@
              <h2 class="subcat-heading">works</h2>
 
         </section>
-        <section>
-            <!-- about (hidden) -->
+        <section id="about">
+            <!-- about me (hidden) -->
+             <div class="panel" id="about-panel">
+                <h3>hello!</h3>
+                <p>this is all about me womp</p>
+             </div>
         </section>
-        <section>
+        <section id="contact">
             <!-- contact (hidden) -->
+             <div class="panel" id="contact-panel">
+                <h3>hello!</h3>
+                <p>contact me here!</p>
+             </div>
         </section>
 
     </main>
@@ -47,6 +55,7 @@
         <!-- name, data, nav -->
     </footer>
     
-    
+
+    <script src="../scripts/main.js"></script>
 </body>
 </html>

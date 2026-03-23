@@ -3,7 +3,7 @@ html {
 }
 body {
     font-size: 16px;
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Libre Baskerville", Roboto, system-ui, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .body-container {
@@ -12,6 +12,8 @@ body {
     justify-content: center;
 
     padding: 0px clamp(1rem, 10%, 10rem);
+
+    background-color: #FCFCF8;
 
 }
 
@@ -28,7 +30,8 @@ header {
     position: sticky;
     top: 0;
 
-    background-color: white;
+    background-color: hsla(60, 40%, 98%, 0);
+
 }
 
 .icon {
@@ -44,7 +47,7 @@ header {
 }
 
 nav a {
-    color: black;
+    color: hsl(288, 38%, 15%);
     text-decoration: none;
 }
 
@@ -75,7 +78,8 @@ section {
 /* make hero text responsive based on viewport size!! */
 .hero-title {
     font-size: calc(1rem + 1.5vw);
-    font-weight: normal;
+    font-weight: 500;
+    color: hsl(289, 41%, 20%);
 }
 
 #works {
@@ -90,6 +94,8 @@ section {
     font-weight: normal;
     padding-top: 2rem;
     padding-bottom: 2rem;
+
+    color: hsl(289, 41%, 15%);
 }
 
 @media screen and (max-width: 600px) {
@@ -139,15 +145,17 @@ section {
 .works-overlay {
     position: absolute;
     inset: 0; /* shorthand for top/right/bottom/left: 0 -> essentially fills the card */
-    background: rgba(0, 0, 0, 0.55);
-    color: white;
+    /* background: rgba(0, 0, 0, 0.55); */
+    background: rgba(83, 86, 36, 0.55);
+    
+    color: #F2F0EF;
     
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 1.5rem;
     opacity: 0;
-    transform: opacity 2s ease;
+    transform: opacity 0.6s ease;
 }
 
 .works-overlay h3 {
@@ -196,19 +204,27 @@ section {
 * || About
 */
 
-.about-panel {
+.panel {
     position: fixed;
-    top: 0;
-    right: -50%;
-    width: 50%;
-    height: 100%;
+    top: var(--header-height);
+    right: -30%;
+    width: 30%;
+    height: calc(100% - var(--header-height));
+    border-radius: 12px;
+    transition: right 0.3s ease
 }
 
-.about-panel.open {
+.panel.open {
     right: 0;
 }
 
+#about .panel {
+    background-color: #723380;
+}
 
+#contact .panel {
+    background-color: #535624;
+}
 
 
 footer {
