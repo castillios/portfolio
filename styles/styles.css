@@ -15,6 +15,10 @@ body {
 
 }
 
+/**
+* || Navigation Bar
+*/
+
 header {
     display: flex;
     justify-content: space-between;
@@ -47,6 +51,11 @@ nav a {
 /* .content {
     padding: 0px calc(1rem + 10vw);
 } */
+
+
+/**
+* || Hero
+*/
 
 section {
     padding-left: calc(1rem + 10vw);
@@ -88,6 +97,10 @@ section {
         padding: 2rem calc(.5rem + 1vw);
     }
 }
+
+/**
+* || Works
+*/
 
 
 .works-grid {
@@ -179,7 +192,21 @@ section {
     }
 }
 
+/**
+* || About
+*/
 
+.about-panel {
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 100%;
+}
+
+.about-panel.open {
+    right: 0;
+}
 
 
 
