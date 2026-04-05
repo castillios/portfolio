@@ -146,7 +146,8 @@ section {
     position: absolute;
     inset: 0; /* shorthand for top/right/bottom/left: 0 -> essentially fills the card */
     /* background: rgba(0, 0, 0, 0.55); */
-    background: rgba(83, 86, 36, 0.55);
+    /* background: rgba(83, 86, 36, 0.55); */
+    background: rgba(64, 29, 72, 0.55);
     
     color: #F2F0EF;
     
@@ -209,21 +210,39 @@ section {
     top: var(--header-height);
     right: -30%;
     width: 30%;
-    height: calc(100% - var(--header-height));
+    height: calc(95% - var(--header-height));
     border-radius: 12px;
-    transition: right 0.3s ease
+    transition: right 0.3s ease;
+
+    overflow: scroll;
 }
 
 .panel.open {
     right: 0;
 }
 
+
+
+.panel-content {
+    padding: 2rem;
+    color: #FCFCF8;
+}
+
+.panel-content p {
+    font-size: 14px;
+    padding: 0.5rem;
+}
+
+.panel-content h4 {
+    padding: 0.5rem 0;
+}
+
 #about .panel {
-    background-color: #723380;
+    background-color: #48315C;
 }
 
 #contact .panel {
-    background-color: #535624;
+    background-color: #97BC6A;
 }
 
 
