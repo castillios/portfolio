@@ -7,7 +7,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/reset.css">
@@ -31,56 +32,132 @@
     </header>
     <main class="content">
         <section class="hero">
-            <!-- hero -->
-             <h1 class="hero-title">hi! i'm maleah,<br>a full stack software engineer<br>with a passion for [design]</h1>
-        </section>
-        <section id="stack">
-            <h2 class="subcat-heading">tech stack</h2>
-
+            <div class="hero-content">
+                <h1 class="hero-title">hello! i'm maleah smith,<br>a full stack software engineer<br>with a passion for data engineering</h1>
+                <nav class="hero-socials" aria-label="Social links and resume">
+                    <a class="hero-social hero-social--icon" href="http://linkedin.com/in/maleah-smith" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                        <img src="assets/linkedin.svg" alt="" width="20" height="20" decoding="async" />
+                    </a>
+                    <a class="hero-social hero-social--icon" href="https://github.com/castillios" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                        <img src="https://cdn.simpleicons.org/github/181717" alt="" width="20" height="20" decoding="async" />
+                    </a>
+                    <a class="hero-social hero-social--resume" href="assets/resume.pdf">Resume</a>
+                </nav>
+            </div>
         </section>
         <section id="works">
             <!-- works -->
             <h2 class="subcat-heading">works</h2>
             <div class="works-grid">
-                <a href="works/studyspotter.html" class="wide">
+                <a href="works/studyspotter.html" class="wide project-link" data-project-title="StudySpotter">
                     <div class="works-card">
                         <img class="works-img" src="assets/studyspot-homepg.png" alt="Screenshot of StudySpotter webapp homepage">
                         <div class="works-overlay">
                             <h3>StudySpotter</h3>
-                            <p>A webapp for finding study spots near your city</p>
+                            <p>A webapp for finding the best study spots near your city</p>
                         </div>
                     </div>
                 </a>
-                <a href="works/studyspotter.html" class="tall">
+                <a href="works/gainsights.html" class="tall project-link" data-project-title="Gainsights">
                     <div class="works-card">
                         <img class="works-img" src="assets/studyspot-homepg.png" alt="Screenshot of StudySpotter webapp homepage">
                         <div class="works-overlay">
-                            <h3>StudySpotter</h3>
-                            <p>A webapp for finding study spots near your city</p>
+                            <h3>Gainsights</h3>
+                            <p>A workout tracker. Record your stats, hit new PRs, and view your progress for free.</p>
                         </div>
                     </div>
                 </a>
             </div>
-        
-
+        </section>
+        <section id="stack">
+            <h2 class="subcat-heading">skills</h2>
+            <div class="skills-wrapper">
+                <div class="skills-grid">
+                    <div class="skill-card" style="--accent:#3776AB; --accent-bg:#e8f2fa; --accent-glow:#3776AB22;">
+                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/python" alt="Python" /></div>
+                        <span class="skill-name">Python</span>
+                    </div>
+                    <div class="skill-card" style="--accent:#3178C6; --accent-bg:#e7f0fa; --accent-glow:#3178C622;">
+                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript" /></div>
+                        <span class="skill-name">TypeScript</span>
+                    </div>
+                
+                    <div class="skill-card" style="--accent:#b89b00; --accent-bg:#fdfbe8; --accent-glow:#F7DF1E44;">
+                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/javascript" alt="JavaScript" /></div>
+                        <span class="skill-name">JavaScript</span>
+                    </div>
+                
+                    <div class="skill-card" style="--accent:#E34F26; --accent-bg:#fdf0ed; --accent-glow:#E34F2622;">
+                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/html5" alt="HTML" /></div>
+                        <span class="skill-name">HTML</span>
+                    </div>
+                
+                    <div class="skill-card" style="--accent:#663399; --accent-bg:#e0cdfd; --accent-glow:#66339922;">
+                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/css" alt="CSS" /></div>
+                        <span class="skill-name">CSS</span>
+                    </div>
+                
+                    <div class="skill-card" style="--accent:#00599C; --accent-bg:#e5f0f8; --accent-glow:#00599C22;">
+                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/cplusplus" alt="C++" /></div>
+                        <span class="skill-name">C++</span>
+                    </div>
+                
+                    <div class="skill-card" style="--accent:#0899b8; --accent-bg:#e8fbff; --accent-glow:#61DAFB33;">
+                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/react" alt="React" /></div>
+                        <span class="skill-name">React</span>
+                    </div>
+                
+                    <div class="skill-card" style="--accent:#444444; --accent-bg:#f0f0f0; --accent-glow:#44444422;">
+                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/nextdotjs" alt="Next.js" /></div>
+                        <span class="skill-name">Next.js</span>
+                    </div>
+                
+                    <div class="skill-card" style="--accent:#F05032; --accent-bg:#fdf0ee; --accent-glow:#F0503222;">
+                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/git" alt="Git" /></div>
+                        <span class="skill-name">Git</span>
+                    </div>
+                
+                    <div class="skill-card" style="--accent:#4169E1; --accent-bg:#eceffe; --accent-glow:#4169E122;">
+                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL" /></div>
+                        <span class="skill-name">PostgreSQL</span>
+                    </div>                    
+                </div>
+            </div>
         </section>
         <section id="about">
             <!-- about me (hidden) -->
              <div class="panel scroll-container" id="about-panel">
                 <div class="panel-content">
-                    <h4>Software for <i>Us</i></h4>
-                    <p>I'm currently a volunteer Software Engineer, contributing to projects that enhance our experiences and constantly biding my time to deepen my skillset. A 2025 grad with a B.S. in Computer Science and a minor in Digital Arts, I've found that the learning never ends for me.</p>
-                    <p>With how fast technology continues to grow, I'm pushing for an environment that enables us to work alongside tech rather than replace us. These days, I've been spending my time working on projects that derive their information from human insights. To me, technology has always been a human forward field. It should not only enhance our personal experiences but act as an agent to work alongside with. </p>
-                    <p>Curiosity has always been a strong suit of mind. Growing up I'd spend my time poking around the family computer, pushing all sorts of buttons and before I knew it, I became the family's IT person. I've always been around computers growing up. And to me, being the bridge that closes the accessibility gap is truly my biggest goal in life.</p>
-                    
-                    <h4>Beyond Tech</h4>
-                    <p>Other than grinding Leetcode and working on personal projects, I love spending my freetime going to the gym, scrapbooking, and photography! Taking care of myself and cultivating a love for the arts has always been important to me. Continuing to nurture my creativity has always fed me inspiration for my personal projects </p>
-                    
+                    <h4>About Maleah</h4>
+                    <p class="about-location">
+                        <img src="assets/location-pin.svg" alt="" class="about-location-icon" decoding="async" />
+                        <span class="about-location-text">LA County, Southern California</span>
+                    </p>
+                    <p>I'm a volunteer Software Engineer at <a href="https://www.hackforla.org/">Hack for LA</a> I spend my time contributing to projects that enhance our experiences and I'm constantly investing my time into deepening my skillset.</p>
+                    <p>My current interests are data ingestion pipelines, data analysis, and insights tools. In a world of ever-evolving technilogy, I strive to be the bridge that closes the accessibility gap in tech. Technology should should not only enhance our personal experiences but act as an agent to work alongside with.</p>
+                    <p>Outside of software, I love working out, running, scrapbooking, and photography! Nurturing my creativity, wellness, and the mind has always been my source of inspiration for my personal projects.</p>
+
                     <h4>Experience</h4>
-                    <div class="two-col">
-                        <h5>StudySpotter</h5>
-                        <h5>KPFF Blueprints to Insights</h5>
-                        <h5>StudySpotter</h5>
+                    <p class="about-education">
+                        <img src="assets/grad-cap.svg" alt="" class="about-education-icon" decoding="async" />
+                        <span class="about-education-text">UC Irvine | Computer Science B.S. and Digital Arts Minor</span>
+                    </p>
+                    <div class="experience-list">
+                        <div class="experience-item">
+                            <h5 class="experience-org">Hack for LA</h5>
+                            <span class="experience-dates">Apr 2026 - Present</span>
+                            <p class="experience-role">Volunteer Software Engineer</p>
+                        </div>
+                        <div class="experience-item">
+                            <h5 class="experience-org">StudySpotter</h5>
+                            <span class="experience-dates">Jan 2026 - Present</span>
+                            <p class="experience-role">Volunteer Software Engineer</p>
+                        </div>
+                        <div class="experience-item">
+                            <h5 class="experience-org">Kababayan at UCI</h5>
+                            <span class="experience-dates">2022 - 2025</span>
+                            <p class="experience-role">Student Leadership</p>
+                        </div>
                     </div>
                 </div>
              </div>
@@ -89,15 +166,33 @@
             <!-- contact (hidden) -->
             <div class="panel" id="contact-panel">
             <div class="panel-content">
-                <h3>i'd love to connect!</h3>
-                <p>contact me here!</p>
+                <h3>I'd love to chat!</h3>
+                <p>Email</p>
+                <p>LinkedIn</p>
+                <p>[contact form]</p>
             </div>
             </div>
         </section>
 
     </main>
-    <footer>
-        <!-- name, data, nav -->
+    <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
+        <div class="project-dialog-shell">
+            <div class="project-dialog-header">
+                <h2 id="project-dialog-title">Project</h2>
+                <button type="button" class="project-dialog-close" id="project-dialog-close" aria-label="Close project dialog">Close</button>
+            </div>
+            <div class="project-dialog-body">
+                <button type="button" class="project-dialog-nav project-dialog-nav--prev" id="project-dialog-prev" aria-label="Previous project">‹</button>
+                <iframe id="project-dialog-frame" class="project-dialog-frame" title="Project details" loading="lazy"></iframe>
+                <button type="button" class="project-dialog-nav project-dialog-nav--next" id="project-dialog-next" aria-label="Next project">›</button>
+            </div>
+        </div>
+    </dialog>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-tagline">made with ♥</span>
+            <span class="footer-copy">© 2026 Maleah Smith. All rights reserved.</span>
+        </div>
     </footer>
     
     <script src="scripts/main.js"></script>
