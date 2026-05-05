@@ -240,7 +240,7 @@ section {
     border: none;
     padding: 0;
     border-radius: 16px;
-    overflow: hidden;
+    overflow: visible;
     background: #ffffff;
     box-shadow: 0 1.2rem 3.2rem rgba(68, 41, 88, 0.35);
 }
@@ -258,7 +258,7 @@ section {
 }
 
 .project-dialog[open]::backdrop {
-    background-color: rgba(89, 80, 95 0.65);
+    background-color: rgba(89, 80, 95, 0.65);
     backdrop-filter: blur(2px);
   }
 
@@ -267,13 +267,16 @@ section {
 }
 
 .project-dialog.is-closing::backdrop {
-    animation: dialog-backdrop-out 200ms ease-in forwards;
+    background-color: rgba(89, 80, 95, 0);
+    backdrop-filter: blur(0px);
 }
 
 .project-dialog-shell {
     display: flex;
     flex-direction: column;
     height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
     animation: dialog-pop-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -295,6 +298,30 @@ section {
     font-size: 1rem;
     font-weight: 600;
     color: hsl(289, 41%, 20%);
+}
+
+.project-dialog-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-dialog-cta {
+    border: 1px solid rgba(51, 35, 63, 0.3);
+    background: #ffffff;
+    color: hsl(289, 41%, 20%);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.project-dialog-cta:hover {
+    background: #f8f4fb;
+}
+
+.project-dialog-cta.is-hidden {
+    display: none;
 }
 
 .project-dialog-close {
@@ -320,39 +347,7 @@ section {
     background: #ffffff;
 }
 
-.project-dialog-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2.4rem;
-    height: 2.4rem;
-    border: 1px solid rgba(42, 26, 53, 0.35);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.96);
-    color: hsl(289, 41%, 20%);
-    font-size: 1.5rem;
-    line-height: 1;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0.35rem 0.8rem rgba(34, 18, 45, 0.14);
-    z-index: 2;
-}
-
-.project-dialog-nav--prev {
-    left: 0.8rem;
-}
-
-.project-dialog-nav--next {
-    right: 0.8rem;
-}
-
-.project-dialog-nav:hover {
-    background: #ffffff;
-}
-
-.project-dialog-nav:focus-visible,
+.project-dialog-cta:focus-visible,
 .project-dialog-close:focus-visible {
     outline: 2px solid hsl(289, 41%, 45%);
     outline-offset: 2px;
@@ -373,13 +368,13 @@ body.dialog-open {
 }
 
 @keyframes dialog-backdrop-in {
-    from { background: rgba(17, 13, 20, 0); }
-    to { background: rgba(17, 13, 20, 0.65); }
+    from { background: rgba(89, 80, 95, 0); }
+    to { background: rgba(89, 80, 95, 0.65); }
 }
 
 @keyframes dialog-backdrop-out {
-    from { background: rgba(17, 13, 20, 0.65); }
-    to { background: rgba(17, 13, 20, 0); }
+    from { background: rgba(89, 80, 95, 0.65); }
+    to { background: rgba(89, 80, 95, 0); }
 }
 
 @keyframes dialog-pop-in {
@@ -679,7 +674,112 @@ body.dialog-open {
 */
 
 #contact .panel {
-    background-color: #97BC6A;
+    background-color: #9BB58C;
+}
+
+.contact-form {
+    margin-top: 0.75rem;
+}
+
+.contact-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.contact-field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #2F4A37;
+}
+
+.contact-field input,
+.contact-field textarea {
+    width: 100%;
+    border: 1px solid rgba(47, 24, 53, 0.2);
+    border-radius: 10px;
+    background: rgba(242, 240, 239, 0.9);
+    color: #2f1835;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.contact-field textarea {
+    resize: vertical;
+    min-height: 7.5rem;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+    color: rgba(47, 24, 53, 0.58);
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    outline: none;
+    border-color: rgba(64, 30, 72, 0.6);
+    box-shadow: 0 0 0 3px rgba(64, 30, 72, 0.14);
+    background-color: #F2F0EF;
+}
+
+.contact-submit {
+    align-self: flex-start;
+    margin-top: 0.25rem;
+    border: 1px solid rgba(47, 74, 55, 0.35);
+    border-radius: 999px;
+    background-color: #2F4A37;
+    color: #F2F0EF;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.contact-submit:hover {
+    background-color: #3D5D47;
+    border-color: #3D5D47;
+    transform: translateY(-1px);
+}
+
+.contact-submit:focus-visible {
+    outline: 2px solid #2F4A37;
+    outline-offset: 3px;
+}
+
+.contact-submit:disabled {
+    opacity: 0.75;
+    cursor: wait;
+    transform: none;
+}
+
+.contact-form-status {
+    min-height: 1.2rem;
+    margin: 0.2rem 0 0;
+    padding: 0;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.contact-form-status.is-pending {
+    color: rgba(47, 74, 55, 0.85);
+}
+
+.contact-form-status.is-success {
+    color: #2F4A37;
+}
+
+.contact-form-status.is-error {
+    color: #7C2D2D;
 }
 
 

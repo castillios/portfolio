@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"> -->
 
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/reset.css">
@@ -49,7 +48,7 @@
             <!-- works -->
             <h2 class="subcat-heading">works</h2>
             <div class="works-grid">
-                <a href="works/studyspotter.html" class="wide project-link" data-project-title="StudySpotter">
+                <a href="works/studyspotter.html" class="wide project-link" data-project-title="StudySpotter" data-project-live-url="https://study-spotter-opal.vercel.app/" data-project-live-label="View project">
                     <div class="works-card">
                         <img class="works-img" src="assets/studyspot-homepg.png" alt="Screenshot of StudySpotter webapp homepage">
                         <div class="works-overlay">
@@ -58,7 +57,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="works/gainsights.html" class="tall project-link" data-project-title="Gainsights">
+                <!-- <a href="works/gainsights.html" class="tall project-link" data-project-title="Gainsights">
                     <div class="works-card">
                         <img class="works-img" src="assets/studyspot-homepg.png" alt="Screenshot of StudySpotter webapp homepage">
                         <div class="works-overlay">
@@ -66,7 +65,7 @@
                             <p>A workout tracker. Record your stats, hit new PRs, and view your progress for free.</p>
                         </div>
                     </div>
-                </a>
+                </a> -->
             </div>
         </section>
         <section id="stack">
@@ -165,12 +164,32 @@
         <section id="contact">
             <!-- contact (hidden) -->
             <div class="panel" id="contact-panel">
-            <div class="panel-content">
-                <h3>I'd love to chat!</h3>
-                <p>Email</p>
-                <p>LinkedIn</p>
-                <p>[contact form]</p>
-            </div>
+                <div class="panel-content">
+                    <h3>I'd love to chat!</h3>
+                    <div class="contact-form">
+                        <form class="contact-form-fields" id="contact-form" action="https://formspree.io/f/xvzlaqlg" method="POST">
+                            <!-- subjectline -->
+                            <input type="hidden" name="_subject" value="Portfolio Contact Form Message" />
+                            <div class="contact-field">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
+                            </div>
+
+                            <div class="contact-field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+                            </div>
+
+                            <div class="contact-field">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Let's connect!" rows="6" required></textarea>
+                            </div>
+
+                            <button type="submit" class="contact-submit">Send message</button>
+                            <p class="contact-form-status" id="contact-form-status" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -179,12 +198,13 @@
         <div class="project-dialog-shell">
             <div class="project-dialog-header">
                 <h2 id="project-dialog-title">Project</h2>
-                <button type="button" class="project-dialog-close" id="project-dialog-close" aria-label="Close project dialog">Close</button>
+                <div class="project-dialog-actions">
+                    <a href="https://study-spotter-opal.vercel.app/" class="project-dialog-cta" id="project-dialog-cta" target="_blank" rel="noopener noreferrer">Visit site</a>
+                    <button type="button" class="project-dialog-close" id="project-dialog-close" aria-label="Close project dialog">Close</button>
+                </div>
             </div>
             <div class="project-dialog-body">
-                <button type="button" class="project-dialog-nav project-dialog-nav--prev" id="project-dialog-prev" aria-label="Previous project">‹</button>
                 <iframe id="project-dialog-frame" class="project-dialog-frame" title="Project details" loading="lazy"></iframe>
-                <button type="button" class="project-dialog-nav project-dialog-nav--next" id="project-dialog-next" aria-label="Next project">›</button>
             </div>
         </div>
     </dialog>
