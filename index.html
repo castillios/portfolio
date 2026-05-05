@@ -14,12 +14,12 @@
 </head>
 <body class="body-container scroll-container">
     <header>
-        <!-- logo -->
-        <!-- <div class="left-header">
-            <a href="./index.html">
-                <img class="icon" aria-hidden="true" src="assets/house-solid-full.svg">
-            </a>
-        </div> -->
+        <div class="left-header">
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+                <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+                <span class="theme-toggle-label">Dark</span>
+            </button>
+        </div>
         <div class="right-header">
             <nav>
                 <a href="#works">work</a>
@@ -32,13 +32,14 @@
     <main class="content">
         <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">hello! i'm maleah smith,<br>a full stack software engineer<br>with a passion for data engineering</h1>
+                <h1 class="hero-title">hello! i'm maleah smith,<br>a full stack software engineer<br>with a passion for <span class="hero-rotating-text" id="hero-rotating-text" data-words="data engineering,data analysis,design,insights tools">data engineering</span></h1>
                 <nav class="hero-socials" aria-label="Social links and resume">
                     <a class="hero-social hero-social--icon" href="http://linkedin.com/in/maleah-smith" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
                         <img src="assets/linkedin.svg" alt="" width="20" height="20" decoding="async" />
                     </a>
-                    <a class="hero-social hero-social--icon" href="https://github.com/castillios" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-                        <img src="https://cdn.simpleicons.org/github/181717" alt="" width="20" height="20" decoding="async" />
+                    <a class="hero-social hero-social--icon hero-social--theme" href="https://github.com/castillios" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                        <img src="https://cdn.simpleicons.org/github/181717" alt="" width="20" height="20" decoding="async" class="icon-light" />
+                        <img src="https://cdn.simpleicons.org/github/ffffff" alt="" width="20" height="20" decoding="async" class="icon-dark" />
                     </a>
                     <a class="hero-social hero-social--resume" href="assets/resume.pdf">Resume</a>
                 </nav>
@@ -107,12 +108,18 @@
                     </div>
                 
                     <div class="skill-card" style="--accent:#444444; --accent-bg:#f0f0f0; --accent-glow:#44444422;">
-                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/nextdotjs" alt="Next.js" /></div>
+                        <div class="skill-logo skill-logo--theme">
+                            <img src="https://cdn.simpleicons.org/nextdotjs/111111" alt="Next.js" class="icon-light" />
+                            <img src="https://cdn.simpleicons.org/nextdotjs/ffffff" alt="Next.js" class="icon-dark" />
+                        </div>
                         <span class="skill-name">Next.js</span>
                     </div>
                 
                     <div class="skill-card" style="--accent:#F05032; --accent-bg:#fdf0ee; --accent-glow:#F0503222;">
-                        <div class="skill-logo"><img src="https://cdn.simpleicons.org/git" alt="Git" /></div>
+                        <div class="skill-logo skill-logo--theme">
+                            <img src="https://cdn.simpleicons.org/git/181717" alt="Git" class="icon-light" />
+                            <img src="https://cdn.simpleicons.org/git/ffffff" alt="Git" class="icon-dark" />
+                        </div>
                         <span class="skill-name">Git</span>
                     </div>
                 

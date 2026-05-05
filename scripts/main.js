@@ -3,6 +3,55 @@
  * Panel Functions for Navigation Windows (About, Contact)
  */
 
+const themeToggle = document.getElementById('theme-toggle');
+const themeToggleIcon = themeToggle ? themeToggle.querySelector('.theme-toggle-icon') : null;
+const themeToggleLabel = themeToggle ? themeToggle.querySelector('.theme-toggle-label') : null;
+const savedTheme = localStorage.getItem('theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+document.body.classList.toggle('theme-dark', initialTheme === 'dark');
+document.documentElement.classList.toggle('theme-dark', initialTheme === 'dark');
+
+function syncThemeToggleUi() {
+    if (!themeToggle || !themeToggleIcon || !themeToggleLabel) return;
+    const isDark = document.body.classList.contains('theme-dark');
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggleIcon.textContent = isDark ? '☀️' : '🌙';
+    themeToggleLabel.textContent = isDark ? 'Light' : 'Dark';
+}
+
+syncThemeToggleUi();
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('theme-dark');
+        document.documentElement.classList.toggle('theme-dark', isDark);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        syncThemeToggleUi();
+    });
+}
+
+const rotatingText = document.getElementById('hero-rotating-text');
+if (rotatingText) {
+    const words = (rotatingText.dataset.words || '')
+        .split(',')
+        .map((word) => word.trim())
+        .filter(Boolean);
+
+    if (words.length > 1) {
+        let idx = Math.max(0, words.indexOf(rotatingText.textContent.trim()));
+
+        window.setInterval(() => {
+            rotatingText.classList.add('is-switching');
+            window.setTimeout(() => {
+                idx = (idx + 1) % words.length;
+                rotatingText.textContent = words[idx];
+                rotatingText.classList.remove('is-switching');
+            }, 240);
+        }, 2400);
+    }
+}
+
 const header = document.querySelector('header');
 function setHeaderHeightVar() {
     if (!header) return;
