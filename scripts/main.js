@@ -4,7 +4,13 @@
  */
 
 const header = document.querySelector('header');
-document.documentElement.style.setProperty('--header-height',  header.offsetHeight + 'px');
+function setHeaderHeightVar() {
+    if (!header) return;
+    document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+}
+
+setHeaderHeightVar();
+window.addEventListener('resize', setHeaderHeightVar);
 
 
 function togglePanel(panelId) {
@@ -31,13 +37,19 @@ document.addEventListener('click', (e) => {
     }
 })
 
+document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.panel.open').forEach((panel) => {
+        panel.classList.remove('open');
+    });
+});
+
 /**
  * Dialog Popup for Project Pages
  */
 
 const projectDialog = document.getElementById('project-dialog');
 const projectDialogFrame = document.getElementById('project-dialog-frame');
-const projectDialogTitle = document.getElementById('project-dialog-title');
 const projectDialogCta = document.getElementById('project-dialog-cta');
 const projectDialogClose = document.getElementById('project-dialog-close');
 const projectLinks = [...document.querySelectorAll('.project-link')];
@@ -55,7 +67,7 @@ function closeProjectDialog() {
 }
 
 function openProjectAt(index) {
-    if (!projectDialog || !projectDialogFrame || !projectDialogTitle || !projectDialogCta) return;
+    if (!projectDialog || !projectDialogFrame || !projectDialogCta) return;
     if (projectLinks.length === 0) return;
 
     const safeIndex = (index + projectLinks.length) % projectLinks.length;
@@ -67,8 +79,8 @@ function openProjectAt(index) {
     if (!projectUrl) return;
 
     activeProjectIndex = safeIndex;
-    projectDialogTitle.textContent = projectTitle;
     projectDialogFrame.src = projectUrl;
+    projectDialog.setAttribute('aria-label', `${projectTitle} details`);
     projectDialogCta.textContent = projectLiveLabel;
     if (projectLiveUrl) {
         projectDialogCta.href = projectLiveUrl;
@@ -83,7 +95,7 @@ function openProjectAt(index) {
     document.body.classList.add('dialog-open');
 }
 
-if (projectDialog && projectDialogFrame && projectDialogTitle && projectDialogCta && projectDialogClose) {
+if (projectDialog && projectDialogFrame && projectDialogCta && projectDialogClose) {
     projectLinks.forEach((link, index) => {
         link.addEventListener('click', (e) => {
             e.preventDefault();

@@ -15,11 +15,11 @@
 <body class="body-container scroll-container">
     <header>
         <!-- logo -->
-        <div class="left-header">
+        <!-- <div class="left-header">
             <a href="./index.html">
                 <img class="icon" aria-hidden="true" src="assets/house-solid-full.svg">
             </a>
-        </div>
+        </div> -->
         <div class="right-header">
             <nav>
                 <a href="#works">work</a>
@@ -194,17 +194,16 @@
         </section>
 
     </main>
-    <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
+    <dialog class="project-dialog" id="project-dialog" aria-label="Project details">
         <div class="project-dialog-shell">
             <div class="project-dialog-header">
-                <h2 id="project-dialog-title">Project</h2>
-                <div class="project-dialog-actions">
-                    <a href="https://study-spotter-opal.vercel.app/" class="project-dialog-cta" id="project-dialog-cta" target="_blank" rel="noopener noreferrer">Visit site</a>
-                    <button type="button" class="project-dialog-close" id="project-dialog-close" aria-label="Close project dialog">Close</button>
-                </div>
+                <button type="button" class="project-dialog-close" id="project-dialog-close" aria-label="Close project dialog">Close</button>
             </div>
             <div class="project-dialog-body">
                 <iframe id="project-dialog-frame" class="project-dialog-frame" title="Project details" loading="lazy"></iframe>
+            </div>
+            <div class="project-dialog-footer">
+                <a href="https://study-spotter-opal.vercel.app/" class="project-dialog-cta" id="project-dialog-cta" target="_blank" rel="noopener noreferrer">View project</a>
             </div>
         </div>
     </dialog>

@@ -236,7 +236,11 @@ section {
 
 .project-dialog {
     width: min(92vw, 1100px);
-    height: min(90vh, 900px);
+    height: min(90dvh, 900px);
+    max-height: 90dvh;
+    position: fixed;
+    inset: 0;
+    margin: auto;
     border: none;
     padding: 0;
     border-radius: 16px;
@@ -284,28 +288,6 @@ section {
     animation: dialog-pop-out 200ms ease-in forwards;
 }
 
-.project-dialog-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.9rem 1rem;
-    border-bottom: 1px solid rgba(51, 35, 63, 0.15);
-    background: #fcfbfd;
-}
-
-.project-dialog-header h2 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
-    color: hsl(289, 41%, 20%);
-}
-
-.project-dialog-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
 .project-dialog-cta {
     border: 1px solid rgba(51, 35, 63, 0.3);
     background: #ffffff;
@@ -322,6 +304,13 @@ section {
 
 .project-dialog-cta.is-hidden {
     display: none;
+}
+
+.project-dialog-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.7rem 1rem 0.5rem;
+    background: #fcfbfd;
 }
 
 .project-dialog-close {
@@ -345,6 +334,14 @@ section {
     height: 100%;
     border: 0;
     background: #ffffff;
+}
+
+.project-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.75rem 1rem 0.9rem;
+    border-top: 1px solid rgba(51, 35, 63, 0.15);
+    background: #fcfbfd;
 }
 
 .project-dialog-cta:focus-visible,
@@ -821,6 +818,123 @@ body.dialog-open {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .body-container {
+        padding: 0 1rem;
+    }
+
+    section {
+        padding-left: clamp(0.9rem, 4vw, 2rem);
+        padding-right: clamp(0.9rem, 4vw, 2rem);
+    }
+
+    .panel {
+        width: min(76vw, 30rem);
+        right: calc(-1 * min(76vw, 30rem));
+        height: calc(100% - var(--header-height));
+        border-radius: 0;
+    }
+
+    .panel-content {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 1rem 0;
+        gap: 0.75rem;
+    }
+
+    .right-header nav {
+        gap: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        min-height: 58vh;
+        height: auto;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.4rem, 8vw, 2.1rem);
+        line-height: 1.25;
+    }
+
+    .hero-socials {
+        gap: 0.5rem;
+    }
+
+    .hero-social--icon {
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+
+    .project-dialog {
+        width: 96vw;
+        height: 92dvh;
+        max-height: 92dvh;
+    }
+
+    .panel {
+        top: var(--header-height);
+        width: 100vw;
+        right: -100vw;
+        height: calc(100dvh - var(--header-height));
+        z-index: 20;
+    }
+
+    .panel-content {
+        padding: 1.2rem 1rem 1.4rem;
+    }
+
+    .panel-content .experience-item {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "org"
+            "dates"
+            "role";
+        gap: 0.2rem;
+    }
+
+    .panel-content .experience-dates {
+        text-align: left;
+    }
+
+    .site-footer {
+        margin-top: 2.5rem;
+        padding: 1.5rem clamp(0.9rem, 4vw, 1.25rem) 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .icon {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    .right-header nav {
+        gap: 0.55rem;
+        font-size: 0.9rem;
+    }
+
+    .subcat-heading {
+        padding-top: 1.25rem;
+        padding-bottom: 1.1rem;
+    }
+
+    .project-dialog-footer {
+        padding: 0.7rem 0.75rem 0.9rem;
+    }
+
+    .project-dialog-cta {
+        width: 100%;
+        text-align: center;
     }
 }
 
