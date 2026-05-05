@@ -27,11 +27,19 @@ header {
     align-items: center;
     padding: 1.5rem 0;
 
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
 
-    background-color: hsla(60, 40%, 98%, 0);
+    background-color: rgba(252, 252, 248, 0.92);
+    backdrop-filter: blur(8px);
 
+}
+
+main.content {
+    padding-top: var(--header-height);
 }
 
 .icon {
