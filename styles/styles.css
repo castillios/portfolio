@@ -13,7 +13,7 @@ body {
 
     padding: 0px clamp(1rem, 10%, 10rem);
 
-    background-color: #FCFCF8;
+    background-color: #F5F3EF;
 
 }
 
@@ -33,7 +33,7 @@ header {
     right: 0;
     z-index: 50;
 
-    background-color: rgba(252, 252, 248, 0.92);
+    background-color: rgba(245, 243, 239, 0.92);
     backdrop-filter: blur(8px);
 
 }
@@ -65,7 +65,7 @@ main.content {
     gap: 0.45rem;
     border: 1px solid rgba(47, 24, 53, 0.2);
     border-radius: 999px;
-    background: #f8f6f2;
+    background: #F1EDE9;
     color: #2f1835;
     font-size: 0.85rem;
     font-weight: 500;
@@ -74,7 +74,7 @@ main.content {
 }
 
 .theme-toggle:hover {
-    background: #f2f0ef;
+    background: #EBE7E6;
 }
 
 nav a {
@@ -500,7 +500,7 @@ section {
     display: flex;
     justify-content: flex-end;
     padding: 0.7rem 1rem 0.5rem;
-    background: #fcfbfd;
+    background: #F3F1ED;
 }
 
 .project-dialog-close {
@@ -531,7 +531,7 @@ section {
     justify-content: flex-end;
     padding: 0.75rem 1rem 0.9rem;
     border-top: 1px solid rgba(51, 35, 63, 0.15);
-    background: #fcfbfd;
+    background: #F3F1ED;
 }
 
 .project-dialog-cta:focus-visible,
@@ -800,7 +800,7 @@ body.theme-dark .hero-social--theme .icon-dark {
 
 .panel-content {
     padding: 2rem;
-    color: #FCFCF8;
+    color: #F5F3EF;
 }
 
 .panel-content p {
@@ -817,7 +817,7 @@ body.theme-dark .hero-social--theme .icon-dark {
 }
 
 #about-panel a {
-    color: #FCFCF8;
+    color: #F5F3EF;
 }
 
 .panel-content .about-education,
@@ -855,7 +855,7 @@ body.theme-dark .hero-social--theme .icon-dark {
     gap: 0.35rem 1.25rem;
     align-items: baseline;
     padding: 0.65rem 0.5rem;
-    border-bottom: 1px solid rgba(252, 252, 248, 0.12);
+    border-bottom: 1px solid rgba(245, 243, 239, 0.12);
 }
 
 .panel-content .experience-item:last-child {
@@ -867,13 +867,13 @@ body.theme-dark .hero-social--theme .icon-dark {
     margin: 0;
     font-size: 15px;
     font-weight: 600;
-    color: #FCFCF8;
+    color: #F5F3EF;
 }
 
 .panel-content .experience-dates {
     grid-area: dates;
     font-size: 13px;
-    color: rgba(252, 252, 248, 0.78);
+    color: rgba(245, 243, 239, 0.78);
     text-align: right;
     white-space: nowrap;
 }
@@ -924,7 +924,7 @@ body.theme-dark .hero-social--theme .icon-dark {
     width: 100%;
     border: 1px solid rgba(47, 24, 53, 0.2);
     border-radius: 10px;
-    background: rgba(242, 240, 239, 0.9);
+    background: rgba(235, 231, 230, 0.9);
     color: #2f1835;
     padding: 0.65rem 0.75rem;
     font-size: 0.9rem;
@@ -947,7 +947,7 @@ body.theme-dark .hero-social--theme .icon-dark {
     outline: none;
     border-color: rgba(64, 30, 72, 0.6);
     box-shadow: 0 0 0 3px rgba(64, 30, 72, 0.14);
-    background-color: #F2F0EF;
+    background-color: #EBE7E6;
 }
 
 .contact-submit {
@@ -1012,7 +1012,7 @@ body.theme-dark .hero-social--theme .icon-dark {
     margin-inline: calc(-1 * clamp(1rem, 10%, 10rem));
     padding: 2rem calc(1rem + 10vw) 3rem;
     border-top: 1px solid hsla(288, 30%, 20%, 0.1);
-    background-color: hsl(60, 25%, 97%);
+    background-color: #F5F3EF;
 }
 
 .footer-inner {
@@ -1187,7 +1187,7 @@ body.theme-dark .hero-social--theme .icon-dark {
 /* Modern browsers — Chrome 121+, Edge 121+, Firefox, Safari 18.2+ */
 * {
     scrollbar-width: 7px;
-    scrollbar-color: #401e48 #f2f0ef;
+    scrollbar-color: #401e48 #EBE7E6;
 }
 
 /* Legacy WebKit — older Chrome/Edge/Safari, radius, borders & shadows */
@@ -1197,17 +1197,17 @@ body.theme-dark .hero-social--theme .icon-dark {
 }
 
 *::-webkit-scrollbar-track {
-    background-color: #f2f0ef;
+    background-color: #EBE7E6;
     border-radius: 20px;
     padding: 1px;
 }
 
 *::-webkit-scrollbar-track:hover {
-    background-color: #f2f0ef;
+    background-color: #EBE7E6;
 }
 
 *::-webkit-scrollbar-track:active {
-    background-color: #f2f0ef;
+    background-color: #EBE7E6;
 }
 
 *::-webkit-scrollbar-thumb {
