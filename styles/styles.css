@@ -627,6 +627,68 @@ body.dialog-open {
     border: 1px solid rgba(61, 45, 72, 0.12);
 }
 
+.project-carousel {
+    margin: 0.75rem 0 0.35rem;
+}
+
+.project-carousel-viewport {
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(61, 45, 72, 0.12);
+}
+
+.project-carousel-track {
+    display: flex;
+    transition: transform 0.35s ease;
+}
+
+.project-carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+.project-carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.65rem;
+}
+
+.project-carousel-btn {
+    border: 1px solid rgba(51, 35, 63, 0.3);
+    background: #ffffff;
+    color: hsl(289, 41%, 20%);
+    border-radius: 999px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.project-carousel-btn:hover:not(:disabled) {
+    background: #f8f4fb;
+}
+
+.project-carousel-btn:focus-visible {
+    outline: 2px solid hsl(289, 41%, 45%);
+    outline-offset: 2px;
+}
+
+.project-carousel-btn:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.project-carousel-status {
+    font-size: 0.85rem;
+    color: hsla(289, 24%, 18%, 0.7);
+    min-width: 3rem;
+    text-align: center;
+}
+
 html.theme-dark body.project-page {
     background: #1f1827;
     color: #ece7f1;
@@ -642,6 +704,24 @@ html.theme-dark .project-meta {
 
 html.theme-dark .project-shot {
     border-color: rgba(236, 231, 241, 0.22);
+}
+
+html.theme-dark .project-carousel-viewport {
+    border-color: rgba(236, 231, 241, 0.22);
+}
+
+html.theme-dark .project-carousel-btn {
+    background: #3a2e47;
+    color: #f2f0ef;
+    border-color: rgba(242, 240, 239, 0.26);
+}
+
+html.theme-dark .project-carousel-btn:hover:not(:disabled) {
+    background: #4a3a5d;
+}
+
+html.theme-dark .project-carousel-status {
+    color: rgba(236, 231, 241, 0.74);
 }
 
 @media screen and (max-width: 768px) {

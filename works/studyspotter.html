@@ -20,11 +20,23 @@
         <h1>StudySpotter</h1>
         <p class="project-meta">Role: Full Stack Engineer · 2026</p>
         <p>
-            StudySpotter helps students discover study spaces by city, compare amenities, and
+            StudySpotter helps students and professionals discover study-friendly cafes by city, compare amenities, and
             quickly pick the best option for their needs.
         </p>
 
-        <img src="../assets/studyspot-homepg.png" alt="StudySpotter homepage preview" class="project-shot">
+        <div class="project-carousel" data-project-carousel>
+            <div class="project-carousel-viewport">
+                <div class="project-carousel-track">
+                    <img src="../assets/studyspot-homepg.png" alt="StudySpotter homepage preview" class="project-shot project-carousel-slide">
+                    <img src="../assets/studyspot-cafe.png" alt="StudySpotter cafe page preview" class="project-shot project-carousel-slide">
+                </div>
+            </div>
+            <div class="project-carousel-controls">
+                <button type="button" class="project-carousel-btn" data-carousel-prev aria-label="Previous screenshot">Previous</button>
+                <span class="project-carousel-status" data-carousel-status aria-live="polite">1 / 2</span>
+                <button type="button" class="project-carousel-btn" data-carousel-next aria-label="Next screenshot">Next</button>
+            </div>
+        </div>
 
         <h2>Highlights</h2>
         <ul>
@@ -36,5 +48,6 @@
         <h2>Stack</h2>
         <p>Next.js, TypeScript, Next.js, Supabase, PostgreSQL</p>
     </main>
+    <script src="../scripts/project-carousel.js"></script>
 </body>
 </html>
